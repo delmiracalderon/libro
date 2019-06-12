@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>REGISTRO DE LIBROS</title>
+</head>
+<!-- <body  onload="getEditorial() ; getAutor()"></body> -->
+
+<body onload="getEditorial() ; getAutor() ; getGenero()"  >
+	<style >
+		.frmlabel
+		{	color:rgb(32,149,242);
+		}
+		.error
+		{	border-style:solid;
+			border-color:red;
+			border-width:1px;
+		}
+	</style>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-1 frmlabel">Id</div>
+			<div class="col-sm-11" id="libro_id">0</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-10"><input type="text" id="cod" class="form-control" placeholder="CODIGO"></div>
+			<div class="col-sm-2"><button class="btn btn-primary form-control" onclick="buscarxcod()">B</button></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12"><input type="text" id="tit" class="form-control" placeholder="Titulo"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-11"><input type="text" id="can" class="form-control" placeholder="Cantidad"></div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-12"><input type="text" id="disp" class="form-control" placeholder="Disponibles"></div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-1" id="editorial"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1" id="autor"></div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-1" id="genero"></div>
+		</div>
+		
+		<br>
+
+
+
+		<br>
+		<div class="row">
+			<div class="col-sm-12" align="center">
+				<button class='btn btn-default'>Nuevo</button>
+				<button class='btn btn-success' onclick="guardar()">Guardar</button>
+				<button class='btn btn-danger' onclick="eliminar()">Eliminar</button>
+			</div>
+		</div>
+		<br>
+
+		<br>
+		<div class="row">
+			<div class="col-sm-3" align="center">
+				<select id="campo" class="form-control">
+					<option value="titulo">Titulo</option>
+					<option value="cantidad">Cantidad</option>
+					<option value="disponibles">Disponibles</option>
+				</select>
+			</div>
+			<div class="col-sm-3" align="center">	
+				<select id="operador" class="form-control">
+					<option value="LIKE">Similar a</option>
+					<option value="=">Igual a</option>
+					<option value="<">Menor a</option>
+					<option value=">">Mayor a</option>
+				</select>
+			</div>
+			<div class="col-sm-3" align="center">	
+				<input type="text" id="valor" class="form-control">
+			</div>	
+			<div class="col-sm-3" align="center">	
+				<button onclick="getTotalRegs()" class="btn btn-primary form-control">Buscar</button>
+			</div>
+		</div>
+
+		
+		<div class="row">
+			<div class="col-sm-12" id="results">
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-12" id="footer">
+			</div>
+		</div>
+		
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/frmlibro.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
